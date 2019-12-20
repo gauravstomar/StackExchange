@@ -1,5 +1,5 @@
 //
-//  FirstViewController.swift
+//  FavoriteViewController.swift
 //  StackExchange
 //
 //  Created by Gaurav S Tomar on 19/12/19.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FavoriteViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
