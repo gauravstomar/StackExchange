@@ -27,7 +27,9 @@ final class NetworkingAPI: NetworkingService {
                         completion([])
                         return
                 }
+                
                 completion(response.items)
+                
             }
         }
         task.resume()

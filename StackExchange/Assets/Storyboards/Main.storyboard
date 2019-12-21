@@ -18,18 +18,63 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Kch-cc-2TW">
                                 <rect key="frame" x="0.0" y="44" width="414" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="9pv-A4-QxB" id="PRM-9q-vzC"/>
+                                </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2R1-Xv-Wou">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2R1-Xv-Wou">
                                 <rect key="frame" x="0.0" y="100" width="414" height="713"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ListingCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListingCell" id="F1Q-Ai-7Gq">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ListingCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ListingCell" id="F1Q-Ai-7Gq" customClass="ListingCell" customModule="StackExchange" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="F1Q-Ai-7Gq" id="PRR-Zt-Yim">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="middleTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BMf-Ka-tVH">
+                                                    <rect key="frame" x="42" y="5" width="367" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                                    <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDV-92-E2T">
+                                                    <rect key="frame" x="42" y="25" width="367" height="14"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="14" id="dAR-N0-iM4"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xIY-hD-6g5">
+                                                    <rect key="frame" x="5" y="6" width="32" height="32"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="xIY-hD-6g5" secondAttribute="height" multiplier="1:1" id="JGI-6Z-izb"/>
+                                                        <constraint firstAttribute="width" constant="32" id="z8D-Tc-T5x"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <state key="normal" title="🤍"/>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="RDV-92-E2T" firstAttribute="leading" secondItem="xIY-hD-6g5" secondAttribute="trailing" constant="5" id="1oY-qE-gVE"/>
+                                                <constraint firstAttribute="bottom" secondItem="RDV-92-E2T" secondAttribute="bottom" constant="5" id="Fv4-cK-YeQ"/>
+                                                <constraint firstItem="xIY-hD-6g5" firstAttribute="leading" secondItem="PRR-Zt-Yim" secondAttribute="leading" constant="5" id="Gqp-td-rjP"/>
+                                                <constraint firstItem="RDV-92-E2T" firstAttribute="top" secondItem="BMf-Ka-tVH" secondAttribute="bottom" constant="2" id="K4e-8G-bEr"/>
+                                                <constraint firstAttribute="trailing" secondItem="RDV-92-E2T" secondAttribute="trailing" constant="5" id="QQb-OR-7tB"/>
+                                                <constraint firstItem="BMf-Ka-tVH" firstAttribute="leading" secondItem="xIY-hD-6g5" secondAttribute="trailing" constant="5" id="Zw2-9P-2nX"/>
+                                                <constraint firstItem="xIY-hD-6g5" firstAttribute="centerY" secondItem="PRR-Zt-Yim" secondAttribute="centerY" id="dJS-4p-pMD"/>
+                                                <constraint firstItem="BMf-Ka-tVH" firstAttribute="top" secondItem="PRR-Zt-Yim" secondAttribute="top" constant="5" id="uF6-pW-tHe"/>
+                                                <constraint firstAttribute="trailing" secondItem="BMf-Ka-tVH" secondAttribute="trailing" constant="5" id="xbJ-Fh-jRu"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="favButton" destination="xIY-hD-6g5" id="IIA-Nu-qHh"/>
+                                            <outlet property="tagsLabel" destination="RDV-92-E2T" id="Rxb-C2-vat"/>
+                                            <outlet property="titleLabel" destination="BMf-Ka-tVH" id="KAU-YM-b7O"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -53,12 +98,13 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="All" image="tray.full" catalog="system" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="searchBar" destination="Kch-cc-2TW" id="nGA-IJ-9u2"/>
                         <outlet property="tableView" destination="2R1-Xv-Wou" id="RWf-Pn-8YO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="-320"/>
+            <point key="canvasLocation" x="749.27536231884062" y="-320.08928571428572"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="wg7-f3-ORb">

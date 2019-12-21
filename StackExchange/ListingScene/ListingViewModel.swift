@@ -52,7 +52,7 @@ final class ListingViewModel {
     
     func didSelectRow(at indexPath: IndexPath) {
         if repos.isEmpty { return }
-        didSelecteResult?(repos[indexPath.item].id)
+        didSelecteResult?(repos[indexPath.item].question_id)
     }
     
     // Private
@@ -70,15 +70,5 @@ final class ListingViewModel {
     private func finishSearching(with repos: [Result]) {
         isRefreshing?(false)
         self.repos = repos
-    }
-}
-
-struct ResultViewModel {
-    let name: String
-}
-
-extension ResultViewModel {
-    init(repo: Result) {
-        self.name = repo.name
     }
 }

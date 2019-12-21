@@ -13,7 +13,7 @@ class ListingViewController: UIViewController {
     private let viewModel = ListingViewModel(networkingService: NetworkingAPI())
     
     @IBOutlet private var tableView: UITableView!
-    @IBOutlet private var searchController: UISearchBar!
+    @IBOutlet private var searchBar: UISearchBar!
     
     private var data: [ResultViewModel]?
 
@@ -29,6 +29,7 @@ class ListingViewController: UIViewController {
     }
     
     private func setupViewModel() {
+        
         viewModel.isRefreshing = { loading in
             UIApplication.shared.isNetworkActivityIndicatorVisible = loading
         }
@@ -43,32 +44,49 @@ class ListingViewController: UIViewController {
             alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
             strongSelf.present(alertController, animated: true, completion: nil)
         }
+        
     }
     
 }
 
 
 extension ListingViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let data = data else { return UITableViewCell() }
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ListingCell", for: indexPath)
-        cell.textLabel?.text = data[indexPath.row].name
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ListingCell", for: indexPath) as! ListingCell
+        cell.titleLabel.text = data[indexPath.row].name
+        cell.tagsLabel.text = data[indexPath.row].tags
         return cell
     }
+    
 }
 
 extension ListingViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectRow(at: indexPath)
     }
+    
 }
 
-extension ListingViewController: UISearchResultsUpdating {
-    func updateSearchResults(for searchController: UISearchController) {
-        viewModel.didChangeQuery(searchController.searchBar.text ?? "")
+extension ListingViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.didChangeQuery(searchText)
     }
+    
+}
+
+
+class ListingCell: UITableViewCell {
+    
+    @IBOutlet var favButton: UIButton!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var tagsLabel: UILabel!
+
 }
