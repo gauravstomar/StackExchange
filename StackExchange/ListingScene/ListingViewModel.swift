@@ -52,6 +52,7 @@ final class ListingViewModel {
     
     func didSelectRow(at indexPath: IndexPath) {
         if repos.isEmpty { return }
+        
         didSelecteResult?(repos[indexPath.item].question_id)
     }
     
