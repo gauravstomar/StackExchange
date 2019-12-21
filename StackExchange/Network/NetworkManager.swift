@@ -1,5 +1,5 @@
 //
-//  NetworkingAPI.swift
+//  NetworkManager.swift
 //  StackExchange
 //
 //  Created by Gaurav S Tomar on 20/12/19.
@@ -13,7 +13,7 @@ protocol NetworkingService {
 }
 
 
-final class NetworkingAPI: NetworkingService {
+final class NetworkManager: NetworkingService {
     
     private let session = URLSession.shared
     

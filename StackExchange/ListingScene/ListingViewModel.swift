@@ -11,12 +11,12 @@ import UIKit
 final class ListingViewModel {
     // Outputs
     var isRefreshing: ((Bool) -> Void)?
-    var didUpdateResult: (([ResultViewModel]) -> Void)?
+    var didUpdateResult: (([StackViewModel]) -> Void)?
     var didSelecteResult: ((Int) -> Void)?
     
     private(set) var repos: [Result] = [Result]() {
         didSet {
-            didUpdateResult?(repos.map { ResultViewModel(repo: $0) })
+            didUpdateResult?(repos.map { StackViewModel(repo: $0) })
         }
     }
     
@@ -72,4 +72,5 @@ final class ListingViewModel {
         isRefreshing?(false)
         self.repos = repos
     }
+
 }

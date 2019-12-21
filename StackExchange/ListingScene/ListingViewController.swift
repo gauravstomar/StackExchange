@@ -10,12 +10,12 @@ import UIKit
 
 class ListingViewController: UIViewController {
 
-    private let viewModel = ListingViewModel(networkingService: NetworkingAPI())
+    private let viewModel = ListingViewModel(networkingService: NetworkManager())
     
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var searchBar: UISearchBar!
     
-    private var data: [ResultViewModel]?
+    private var data: [StackViewModel]?
 
     
     override func viewDidLoad() {

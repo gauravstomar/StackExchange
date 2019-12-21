@@ -1,5 +1,5 @@
 //
-//  Result.swift
+//  Stack.swift
 //  StackExchange
 //
 //  Created by Gaurav S Tomar on 20/12/19.
@@ -8,23 +8,24 @@
 
 import Foundation
 
-struct Result: Decodable {
+struct Stack: Decodable {
     let question_id: Int
     let tags: [String]
     let title: String
 }
 
 
-struct ResultViewModel {
+struct StackViewModel {
     let name: String
     let tags: String
 }
 
 
 //Mapping
-extension ResultViewModel {
-    init(repo: Result) {
+extension StackViewModel {
+    init(repo: Stack) {
         self.name = repo.title
         self.tags = repo.tags.joined(separator:", ")
     }
 }
+

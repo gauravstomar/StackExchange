@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EF4EE32E23ACE9BC002383E3 /* NetworkingAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EE32D23ACE9BC002383E3 /* NetworkingAPI.swift */; };
+		EF4EE32E23ACE9BC002383E3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EE32D23ACE9BC002383E3 /* NetworkManager.swift */; };
 		EF4EE33423AD0459002383E3 /* ListingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EE33323AD0459002383E3 /* ListingViewModel.swift */; };
 		EF4EE33623AD0470002383E3 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EE33523AD0470002383E3 /* FavoriteViewModel.swift */; };
 		EF4EE33B23AD1014002383E3 /* Throttle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EE33A23AD1014002383E3 /* Throttle.swift */; };
-		EF4EE33D23AD1694002383E3 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EE33C23AD1694002383E3 /* Result.swift */; };
+		EF4EE33D23AD1694002383E3 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4EE33C23AD1694002383E3 /* Stack.swift */; };
 		EF83E1FF23AE7AC70075CC99 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83E1FE23AE7AC70075CC99 /* CoreDataStack.swift */; };
+		EF83E20223AE7DB10075CC99 /* DatabaseManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83E20123AE7DB10075CC99 /* DatabaseManger.swift */; };
+		EF83E20623AE83820075CC99 /* Stacks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF83E20423AE83820075CC99 /* Stacks.xcdatamodeld */; };
+		EF83E20E23AE84520075CC99 /* Stack+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83E20C23AE84520075CC99 /* Stack+CoreDataClass.swift */; };
+		EF83E20F23AE84520075CC99 /* Stack+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF83E20D23AE84520075CC99 /* Stack+CoreDataProperties.swift */; };
 		EFFA85E023ABCDA800D7EF71 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFA85DF23ABCDA800D7EF71 /* AppDelegate.swift */; };
 		EFFA85E223ABCDA800D7EF71 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFA85E123ABCDA800D7EF71 /* SceneDelegate.swift */; };
 		EFFA85E423ABCDA800D7EF71 /* ListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFFA85E323ABCDA800D7EF71 /* ListingViewController.swift */; };
@@ -42,12 +46,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		EF4EE32D23ACE9BC002383E3 /* NetworkingAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingAPI.swift; sourceTree = "<group>"; };
+		EF4EE32D23ACE9BC002383E3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		EF4EE33323AD0459002383E3 /* ListingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingViewModel.swift; sourceTree = "<group>"; };
 		EF4EE33523AD0470002383E3 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		EF4EE33A23AD1014002383E3 /* Throttle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Throttle.swift; sourceTree = "<group>"; };
-		EF4EE33C23AD1694002383E3 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		EF4EE33C23AD1694002383E3 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		EF83E1FE23AE7AC70075CC99 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		EF83E20123AE7DB10075CC99 /* DatabaseManger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManger.swift; sourceTree = "<group>"; };
+		EF83E20523AE83820075CC99 /* Stacks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Stacks.xcdatamodel; sourceTree = "<group>"; };
+		EF83E20C23AE84520075CC99 /* Stack+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stack+CoreDataClass.swift"; sourceTree = "<group>"; };
+		EF83E20D23AE84520075CC99 /* Stack+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Stack+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		EFFA85DC23ABCDA800D7EF71 /* StackExchange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StackExchange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFFA85DF23ABCDA800D7EF71 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		EFFA85E123ABCDA800D7EF71 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,7 +101,7 @@
 		EF4EE32F23ACE9C6002383E3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				EF4EE32D23ACE9BC002383E3 /* NetworkingAPI.swift */,
+				EF4EE32D23ACE9BC002383E3 /* NetworkManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -101,7 +109,7 @@
 		EF4EE33023ACEA0D002383E3 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EF4EE33C23AD1694002383E3 /* Result.swift */,
+				EF4EE33C23AD1694002383E3 /* Stack.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -133,6 +141,32 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		EF83E20023AE7CA40075CC99 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				EF83E20B23AE84340075CC99 /* ManagedObject */,
+				EF83E20123AE7DB10075CC99 /* DatabaseManger.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		EF83E20323AE83230075CC99 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				EF83E20423AE83820075CC99 /* Stacks.xcdatamodeld */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
+		EF83E20B23AE84340075CC99 /* ManagedObject */ = {
+			isa = PBXGroup;
+			children = (
+				EF83E20C23AE84520075CC99 /* Stack+CoreDataClass.swift */,
+				EF83E20D23AE84520075CC99 /* Stack+CoreDataProperties.swift */,
+			);
+			path = ManagedObject;
+			sourceTree = "<group>";
+		};
 		EFFA85D323ABCDA800D7EF71 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +193,7 @@
 				EFFA85E123ABCDA800D7EF71 /* SceneDelegate.swift */,
 				EF4EE33923AD1014002383E3 /* Utils */,
 				EF4EE33023ACEA0D002383E3 /* Models */,
+				EF83E20023AE7CA40075CC99 /* Database */,
 				EF4EE32F23ACE9C6002383E3 /* Network */,
 				EF4EE33723AD047D002383E3 /* ListingScene */,
 				EF4EE33823AD048C002383E3 /* FavoriteScene */,
@@ -198,6 +233,7 @@
 		EFFA861223ABD1FE00D7EF71 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				EF83E20323AE83230075CC99 /* DataModel */,
 				EFFA85EA23ABCDAA00D7EF71 /* Assets.xcassets */,
 				EFFA861323ABD20D00D7EF71 /* Storyboards */,
 			);
@@ -344,15 +380,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF4EE32E23ACE9BC002383E3 /* NetworkingAPI.swift in Sources */,
+				EF83E20623AE83820075CC99 /* Stacks.xcdatamodeld in Sources */,
+				EF83E20E23AE84520075CC99 /* Stack+CoreDataClass.swift in Sources */,
+				EF4EE32E23ACE9BC002383E3 /* NetworkManager.swift in Sources */,
 				EF4EE33B23AD1014002383E3 /* Throttle.swift in Sources */,
 				EF4EE33423AD0459002383E3 /* ListingViewModel.swift in Sources */,
 				EFFA85E623ABCDA800D7EF71 /* FavoriteViewController.swift in Sources */,
 				EFFA85E423ABCDA800D7EF71 /* ListingViewController.swift in Sources */,
 				EF83E1FF23AE7AC70075CC99 /* CoreDataStack.swift in Sources */,
-				EF4EE33D23AD1694002383E3 /* Result.swift in Sources */,
+				EF83E20223AE7DB10075CC99 /* DatabaseManger.swift in Sources */,
+				EF4EE33D23AD1694002383E3 /* Stack.swift in Sources */,
 				EFFA85E023ABCDA800D7EF71 /* AppDelegate.swift in Sources */,
 				EF4EE33623AD0470002383E3 /* FavoriteViewModel.swift in Sources */,
+				EF83E20F23AE84520075CC99 /* Stack+CoreDataProperties.swift in Sources */,
 				EFFA85E223ABCDA800D7EF71 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -657,6 +697,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EF83E20423AE83820075CC99 /* Stacks.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EF83E20523AE83820075CC99 /* Stacks.xcdatamodel */,
+			);
+			currentVersion = EF83E20523AE83820075CC99 /* Stacks.xcdatamodel */;
+			path = Stacks.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = EFFA85D423ABCDA800D7EF71 /* Project object */;
 }
