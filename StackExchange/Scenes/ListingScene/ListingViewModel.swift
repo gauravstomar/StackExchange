@@ -11,12 +11,12 @@ import UIKit
 final class ListingViewModel {
     // Outputs
     var isRefreshing: ((Bool) -> Void)?
-    var didUpdateResult: (([StackViewModel]) -> Void)?
-    var didSelecteResult: ((Int) -> Void)?
+    var didUpdateStack: (([StackViewModel]) -> Void)?
+    var didSelecteStack: ((Int) -> Void)?
     
-    private(set) var repos: [Result] = [Result]() {
+    private(set) var repos: [Stack] = [Stack]() {
         didSet {
-            didUpdateResult?(repos.map { StackViewModel(repo: $0) })
+            didUpdateStack?(repos.map { StackViewModel(repo: $0) })
         }
     }
     
@@ -34,7 +34,7 @@ final class ListingViewModel {
     // Inputs
     func ready() {
         isRefreshing?(true)
-        networkingService.searchResults(withQuery: "swift") { [weak self] repos in
+        networkingService.searchStacks(withQuery: "swift") { [weak self] repos in
             guard let strongSelf  = self else { return }
             strongSelf.finishSearching(with: repos)
         }
@@ -53,7 +53,7 @@ final class ListingViewModel {
     func didSelectRow(at indexPath: IndexPath) {
         if repos.isEmpty { return }
         
-        didSelecteResult?(repos[indexPath.item].question_id)
+        didSelecteStack?(repos[indexPath.item].question_id)
     }
     
     // Private
@@ -62,13 +62,13 @@ final class ListingViewModel {
         
         isRefreshing?(true)
 
-        currentSearchNetworkTask = networkingService.searchResults(withQuery: query) { [weak self] repos in
+        currentSearchNetworkTask = networkingService.searchStacks(withQuery: query) { [weak self] repos in
             guard let strongSelf  = self else { return }
             strongSelf.finishSearching(with: repos)
         }
     }
     
-    private func finishSearching(with repos: [Result]) {
+    private func finishSearching(with repos: [Stack]) {
         isRefreshing?(false)
         self.repos = repos
     }

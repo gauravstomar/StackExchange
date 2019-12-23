@@ -33,12 +33,12 @@ class ListingViewController: UIViewController {
         viewModel.isRefreshing = { loading in
             UIApplication.shared.isNetworkActivityIndicatorVisible = loading
         }
-        viewModel.didUpdateResult = { [weak self] repos in
+        viewModel.didUpdateStack = { [weak self] repos in
             guard let strongSelf = self else { return }
             strongSelf.data = repos
             strongSelf.tableView.reloadData()
         }
-        viewModel.didSelecteResult = { [weak self] id in
+        viewModel.didSelecteStack = { [weak self] id in
             guard let strongSelf = self else { return }
             let alertController = UIAlertController(title: "\(id)", message: nil, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
