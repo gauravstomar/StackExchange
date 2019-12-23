@@ -11,6 +11,6 @@ import Foundation
 import CoreData
 
 @objc(Stack)
-public class Stack: NSManagedObject {
+public class StackMO: NSManagedObject {
 
 }

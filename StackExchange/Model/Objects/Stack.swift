@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Stack: Decodable {
+struct StackRO: Decodable {
     let question_id: Int
     let tags: [String]
     let title: String
@@ -23,7 +23,7 @@ struct StackViewModel {
 
 //Mapping
 extension StackViewModel {
-    init(repo: Stack) {
+    init(repo: StackRO) {
         self.name = repo.title
         self.tags = repo.tags.joined(separator:", ")
     }

@@ -11,7 +11,7 @@ import Foundation
 import CoreData
 
 
-extension Stack {
+extension StackMO {
 
     @nonobjc public class func fetchRequest() -> NSFetchRequest<Stack> {
         return NSFetchRequest<Stack>(entityName: "Stack")
