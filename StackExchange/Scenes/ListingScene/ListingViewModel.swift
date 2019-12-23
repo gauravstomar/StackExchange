@@ -55,9 +55,9 @@ final class ListingViewModel {
         
         let ro = repos[indexPath.item]
             
-//        DataBaseManger.saveStackToDb(ro) {
-//            
-//        }
+        DataBaseManger.saveStackToDb(ro) {
+            
+        }
         
         didSelecteStack?(ro.question_id)
     }

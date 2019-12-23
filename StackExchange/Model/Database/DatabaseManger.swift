@@ -12,7 +12,7 @@ import CoreData
 
 class DataBaseManger {
     
-    class func saveStackToDb(_ stack: StackRO, _ completionBlock : @escaping ()->()) {
+    static func saveStackToDb(_ stack: StackRO, _ completionBlock : @escaping ()->()) {
 
         //TODO - Out of the scope - Use background context to improve performance
         let context = CoreDataStack.persistentContainer.viewContext
@@ -28,7 +28,7 @@ class DataBaseManger {
     }
     
     
-    class func loadStacksFromDb() -> [StackViewModel] {
+    static func loadStacksFromDb() -> [StackViewModel] {
 
         let context = CoreDataStack.persistentContainer.viewContext
         var viewModelArray = [StackViewModel]()
@@ -36,10 +36,11 @@ class DataBaseManger {
         let fr = NSFetchRequest<StackMO>(entityName: "Stack")
         
         do {
-            let stack : [StackMO] = try context.fetch(fr)
-            if stack.count > 0{
-                
-                print(stack)
+            let stacks : [StackMO] = try context.fetch(fr)
+            if stacks.count > 0 {
+                for stack in stacks {
+                    viewModelArray.append(StackViewModel(maob: stack))
+                }
             }
         } catch {
             print("Error fetching data from CoreData")

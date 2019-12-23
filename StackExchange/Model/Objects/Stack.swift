@@ -25,10 +25,17 @@ struct StackViewModel {
 
 //Mapping
 extension StackViewModel {
+
     init(repo: StackRO) {
         self.name = repo.title
         self.tags = repo.tags.joined(separator:", ")
     }
+
+    init(maob: StackMO) {
+        self.name = maob.name ?? ""
+        self.tags = maob.tag ?? ""
+    }
+
 }
 
 @objc(Stack)
