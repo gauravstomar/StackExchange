@@ -98,6 +98,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EF4CD25523B0BF8E00343E5F /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EF4EE33723AD047D002383E3 /* ListingScene */,
+				EF4EE33823AD048C002383E3 /* FavoriteScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EF4CD25623B0BFA900343E5F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF4EE33023ACEA0D002383E3 /* Objects */,
+				EF83E20023AE7CA40075CC99 /* Database */,
+				EF4EE32F23ACE9C6002383E3 /* Network */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EF4EE32F23ACE9C6002383E3 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,12 +125,12 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		EF4EE33023ACEA0D002383E3 /* Models */ = {
+		EF4EE33023ACEA0D002383E3 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
 				EF4EE33C23AD1694002383E3 /* Stack.swift */,
 			);
-			path = Models;
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		EF4EE33723AD047D002383E3 /* ListingScene */ = {
@@ -192,11 +211,8 @@
 			children = (
 				EFFA85E123ABCDA800D7EF71 /* SceneDelegate.swift */,
 				EF4EE33923AD1014002383E3 /* Utils */,
-				EF4EE33023ACEA0D002383E3 /* Models */,
-				EF83E20023AE7CA40075CC99 /* Database */,
-				EF4EE32F23ACE9C6002383E3 /* Network */,
-				EF4EE33723AD047D002383E3 /* ListingScene */,
-				EF4EE33823AD048C002383E3 /* FavoriteScene */,
+				EF4CD25623B0BFA900343E5F /* Model */,
+				EF4CD25523B0BF8E00343E5F /* Scenes */,
 				EFFA861123ABD08F00D7EF71 /* Bootstrap */,
 				EFFA861223ABD1FE00D7EF71 /* Assets */,
 				EFFA85EF23ABCDAA00D7EF71 /* Info.plist */,
