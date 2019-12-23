@@ -25,6 +25,7 @@ class ListingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        searchBar.text = "swift"
         viewModel.ready()
     }
     
@@ -39,10 +40,10 @@ class ListingViewController: UIViewController {
             strongSelf.tableView.reloadData()
         }
         viewModel.didSelecteStack = { [weak self] id in
-            guard let strongSelf = self else { return }
-            let alertController = UIAlertController(title: "\(id)", message: nil, preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-            strongSelf.present(alertController, animated: true, completion: nil)
+//            guard let strongSelf = self else { return }
+//            let alertController = UIAlertController(title: "Added to favorite \(id)", message: nil, preferredStyle: .alert)
+//            alertController.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+//            strongSelf.present(alertController, animated: true, completion: nil)
         }
         
     }
@@ -61,6 +62,7 @@ extension ListingViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListingCell", for: indexPath) as! ListingCell
         cell.titleLabel.text = data[indexPath.row].name
         cell.tagsLabel.text = data[indexPath.row].tags
+        cell.favButton.setTitle(data[indexPath.row].selected ? "❤️" : "🤍", for: .normal)
         return cell
     }
     
@@ -69,6 +71,8 @@ extension ListingViewController: UITableViewDataSource {
 extension ListingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        data?[indexPath.row].selected = !(data?[indexPath.row].selected ?? true)
+        tableView.reloadRows(at: [indexPath], with: .automatic)
         viewModel.didSelectRow(at: indexPath)
     }
     

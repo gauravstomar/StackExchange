@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 
 struct StackRO: Decodable {
     let question_id: Int
@@ -18,6 +19,7 @@ struct StackRO: Decodable {
 struct StackViewModel {
     let name: String
     let tags: String
+    var selected: Bool = false
 }
 
 
@@ -29,3 +31,19 @@ extension StackViewModel {
     }
 }
 
+@objc(Stack)
+public class StackMO_: NSManagedObject {
+
+}
+
+extension StackMO_ {
+
+    @nonobjc public class func fetchRequest() -> NSFetchRequest<StackMO_> {
+        return NSFetchRequest<StackMO_>(entityName: "Stack")
+    }
+
+    @NSManaged public var id: Int64
+    @NSManaged public var name: String?
+    @NSManaged public var tag: String?
+
+}

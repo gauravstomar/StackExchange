@@ -9,7 +9,7 @@
 import Foundation
 
 protocol NetworkingService {
-    @discardableResult func searchStacks(withQuery query: String, completion: @escaping ([Stack]) -> ()) -> URLSessionDataTask
+    @discardableResult func searchStacks(withQuery query: String, completion: @escaping ([StackRO]) -> ()) -> URLSessionDataTask
 }
 
 
@@ -18,7 +18,7 @@ final class NetworkManager: NetworkingService {
     private let session = URLSession.shared
     
     @discardableResult
-    func searchStacks(withQuery query: String, completion: @escaping ([Stack]) -> ()) -> URLSessionDataTask {
+    func searchStacks(withQuery query: String, completion: @escaping ([StackRO]) -> ()) -> URLSessionDataTask {
         let request = URLRequest(url: URL(string: "https://api.stackexchange.com/2.2/search?order=desc&sort=activity&site=stackoverflow&intitle=\(query)")!)
         let task = session.dataTask(with: request) { (data, _, _) in
             DispatchQueue.main.async {
@@ -39,5 +39,5 @@ final class NetworkManager: NetworkingService {
 }
 
 fileprivate struct SearchResponse: Decodable {
-    let items: [Stack]
+    let items: [StackRO]
 }

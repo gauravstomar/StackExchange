@@ -14,7 +14,7 @@ final class ListingViewModel {
     var didUpdateStack: (([StackViewModel]) -> Void)?
     var didSelecteStack: ((Int) -> Void)?
     
-    private(set) var repos: [Stack] = [Stack]() {
+    private(set) var repos: [StackRO] = [StackRO]() {
         didSet {
             didUpdateStack?(repos.map { StackViewModel(repo: $0) })
         }
@@ -52,7 +52,6 @@ final class ListingViewModel {
     
     func didSelectRow(at indexPath: IndexPath) {
         if repos.isEmpty { return }
-        
         didSelecteStack?(repos[indexPath.item].question_id)
     }
     
@@ -68,7 +67,7 @@ final class ListingViewModel {
         }
     }
     
-    private func finishSearching(with repos: [Stack]) {
+    private func finishSearching(with repos: [StackRO]) {
         isRefreshing?(false)
         self.repos = repos
     }
