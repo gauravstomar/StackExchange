@@ -52,7 +52,14 @@ final class ListingViewModel {
     
     func didSelectRow(at indexPath: IndexPath) {
         if repos.isEmpty { return }
-        didSelecteStack?(repos[indexPath.item].question_id)
+        
+        let ro = repos[indexPath.item]
+            
+//        DataBaseManger.saveStackToDb(ro) {
+//            
+//        }
+        
+        didSelecteStack?(ro.question_id)
     }
     
     // Private

@@ -7,15 +7,22 @@
 //
 
 import Foundation
+import CoreData
+
 
 class DataBaseManger {
     
-    class func saveStackToDb(_ completionBlock : @escaping ()->()) {
+    class func saveStackToDb(_ stack: StackRO, _ completionBlock : @escaping ()->()) {
 
         //TODO - Out of the scope - Use background context to improve performance
-//        let context = CoreDataStack.persistentContainer.viewContext
-//        let car = Stack(context:context)
-//        CoreDataStack.saveContext()
+        let context = CoreDataStack.persistentContainer.viewContext
+        
+        let s = StackMO(context: context)
+        s.name = stack.title
+        s.id = Int64(stack.question_id)
+        s.tag = stack.tags.joined(separator: ", ")
+            
+        CoreDataStack.saveContext()
         completionBlock()
 
     }
@@ -25,17 +32,18 @@ class DataBaseManger {
 
         let context = CoreDataStack.persistentContainer.viewContext
         var viewModelArray = [StackViewModel]()
-//        do {
-//            let stack : [Stack] = try context.fetch(Car.fetchRequest())
-//            if stack.count > 0{
-//                for car in cars{
-//                    let viewModel = CarInfoViewModel(data: car)
-//                    viewModelArray.append(viewModel!)
-//                }
-//            }
-//        } catch {
-//            print("Error fetching data from CoreData")
-//        }
+        
+        let fr = NSFetchRequest<StackMO>(entityName: "Stack")
+        
+        do {
+            let stack : [StackMO] = try context.fetch(fr)
+            if stack.count > 0{
+                
+                print(stack)
+            }
+        } catch {
+            print("Error fetching data from CoreData")
+        }
         
         return viewModelArray
     

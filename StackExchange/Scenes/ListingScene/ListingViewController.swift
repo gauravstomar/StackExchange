@@ -71,9 +71,11 @@ extension ListingViewController: UITableViewDataSource {
 extension ListingViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        data?[indexPath.row].selected = !(data?[indexPath.row].selected ?? true)
+        
+        data![indexPath.row].selected = !( data![indexPath.row].selected )
         tableView.reloadRows(at: [indexPath], with: .automatic)
         viewModel.didSelectRow(at: indexPath)
+        
     }
     
 }
