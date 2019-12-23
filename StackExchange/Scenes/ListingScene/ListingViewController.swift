@@ -14,6 +14,7 @@ class ListingViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var searchBar: UISearchBar!
+    @IBOutlet private var effectView: UIVisualEffectView!
     @IBOutlet private var activityIndicator: UIActivityIndicatorView!
     
     private var data: [StackViewModel]?
@@ -35,8 +36,10 @@ class ListingViewController: UIViewController {
         viewModel.isRefreshing = { [weak self] loading in
             guard let strongSelf = self else { return }
             if loading {
+                strongSelf.effectView.isHidden = false
                 strongSelf.activityIndicator.startAnimating()
             } else {
+                strongSelf.effectView.isHidden = true
                 strongSelf.activityIndicator.stopAnimating()
             }
             

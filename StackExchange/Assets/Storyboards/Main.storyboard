@@ -82,6 +82,14 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="Qgd-Md-jBn"/>
                                 </connections>
                             </tableView>
+                            <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9T0-8h-ib0">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="SkO-cx-IA6">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="713"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="regular"/>
+                            </visualEffectView>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gTM-LT-ykc">
                                 <rect key="frame" x="197" y="62" width="20" height="20"/>
                             </activityIndicatorView>
@@ -89,13 +97,17 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="2R1-Xv-Wou" secondAttribute="bottom" id="5tu-gl-Z5p"/>
+                            <constraint firstItem="9T0-8h-ib0" firstAttribute="bottom" secondItem="2R1-Xv-Wou" secondAttribute="bottom" id="AW2-TA-l3u"/>
+                            <constraint firstItem="9T0-8h-ib0" firstAttribute="trailing" secondItem="2R1-Xv-Wou" secondAttribute="trailing" id="CwL-F5-Gek"/>
                             <constraint firstItem="2R1-Xv-Wou" firstAttribute="top" secondItem="Kch-cc-2TW" secondAttribute="bottom" id="MF7-0Y-MqJ"/>
+                            <constraint firstItem="9T0-8h-ib0" firstAttribute="leading" secondItem="2R1-Xv-Wou" secondAttribute="leading" id="ZiO-xJ-XKQ"/>
                             <constraint firstItem="Kch-cc-2TW" firstAttribute="top" secondItem="PQr-Ze-W5v" secondAttribute="top" id="aCs-Sc-4AD"/>
                             <constraint firstItem="Kch-cc-2TW" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="bhH-5S-Aom"/>
                             <constraint firstItem="2R1-Xv-Wou" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="dNi-TV-dbR"/>
                             <constraint firstItem="2R1-Xv-Wou" firstAttribute="top" secondItem="Kch-cc-2TW" secondAttribute="bottom" id="dim-QD-x6e"/>
                             <constraint firstItem="gTM-LT-ykc" firstAttribute="centerX" secondItem="Kch-cc-2TW" secondAttribute="centerX" id="eZH-qk-WJ6"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="2R1-Xv-Wou" secondAttribute="trailing" id="hRI-HJ-Ay9"/>
+                            <constraint firstItem="9T0-8h-ib0" firstAttribute="top" secondItem="2R1-Xv-Wou" secondAttribute="top" id="mIx-fn-jNF"/>
                             <constraint firstItem="gTM-LT-ykc" firstAttribute="centerY" secondItem="Kch-cc-2TW" secondAttribute="centerY" id="q7k-1z-g1Q"/>
                             <constraint firstItem="Kch-cc-2TW" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="vwO-WP-AqP"/>
                         </constraints>
@@ -104,13 +116,14 @@
                     <tabBarItem key="tabBarItem" title="All" image="tray.full" catalog="system" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="activityIndicator" destination="gTM-LT-ykc" id="vqp-go-jPK"/>
+                        <outlet property="effectView" destination="9T0-8h-ib0" id="ES6-oG-Cw7"/>
                         <outlet property="searchBar" destination="Kch-cc-2TW" id="nGA-IJ-9u2"/>
                         <outlet property="tableView" destination="2R1-Xv-Wou" id="RWf-Pn-8YO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="-321"/>
+            <point key="canvasLocation" x="815.94202898550736" y="-321.42857142857139"/>
         </scene>
         <!--Favourites-->
         <scene sceneID="wg7-f3-ORb">

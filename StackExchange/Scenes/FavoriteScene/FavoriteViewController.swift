@@ -42,7 +42,7 @@ extension FavoriteViewController: UITableViewDataSource {
 
 
 class FavoriteCell: UITableViewCell {
-    
+
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var tagsLabel: UILabel!
 
