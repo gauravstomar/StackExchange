@@ -10,14 +10,15 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
 
+    @IBOutlet private var tableView: UITableView!
+
     private let viewModel = FavoriteViewModels()
     private var data: [StackViewModel]?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+
+    override func viewWillAppear(_ animated: Bool) {
         data = viewModel.listingData
-        
+        tableView.reloadData()
     }
 
 }
