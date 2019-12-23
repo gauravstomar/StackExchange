@@ -10,12 +10,13 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
 
+    private let viewModel = FavoriteViewModels()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
-        print(DataBaseManger.loadStacksFromDb())
+        viewModel.listingData
         
     }
 

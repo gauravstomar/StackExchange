@@ -82,6 +82,9 @@
                                     <outlet property="delegate" destination="9pv-A4-QxB" id="Qgd-Md-jBn"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gTM-LT-ykc">
+                                <rect key="frame" x="197" y="62" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -91,13 +94,16 @@
                             <constraint firstItem="Kch-cc-2TW" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="bhH-5S-Aom"/>
                             <constraint firstItem="2R1-Xv-Wou" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="dNi-TV-dbR"/>
                             <constraint firstItem="2R1-Xv-Wou" firstAttribute="top" secondItem="Kch-cc-2TW" secondAttribute="bottom" id="dim-QD-x6e"/>
+                            <constraint firstItem="gTM-LT-ykc" firstAttribute="centerX" secondItem="Kch-cc-2TW" secondAttribute="centerX" id="eZH-qk-WJ6"/>
                             <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="2R1-Xv-Wou" secondAttribute="trailing" id="hRI-HJ-Ay9"/>
+                            <constraint firstItem="gTM-LT-ykc" firstAttribute="centerY" secondItem="Kch-cc-2TW" secondAttribute="centerY" id="q7k-1z-g1Q"/>
                             <constraint firstItem="Kch-cc-2TW" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="vwO-WP-AqP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="All" image="tray.full" catalog="system" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="gTM-LT-ykc" id="vqp-go-jPK"/>
                         <outlet property="searchBar" destination="Kch-cc-2TW" id="nGA-IJ-9u2"/>
                         <outlet property="tableView" destination="2R1-Xv-Wou" id="RWf-Pn-8YO"/>
                     </connections>

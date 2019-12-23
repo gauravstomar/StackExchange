@@ -8,13 +8,13 @@
 
 import UIKit
 
-class FavoriteViewModel: UIViewController {
+final class FavoriteViewModels {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    private var data: [StackViewModel]?
+
+    var listingData: [StackViewModel] {
+        return DataBaseManger.loadStacksFromDb()
     }
-
-
+    
 }
 

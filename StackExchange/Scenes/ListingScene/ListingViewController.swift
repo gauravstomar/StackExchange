@@ -14,6 +14,7 @@ class ListingViewController: UIViewController {
     
     @IBOutlet private var tableView: UITableView!
     @IBOutlet private var searchBar: UISearchBar!
+    @IBOutlet private var activityIndicator: UIActivityIndicatorView!
     
     private var data: [StackViewModel]?
 
@@ -31,14 +32,22 @@ class ListingViewController: UIViewController {
     
     private func setupViewModel() {
         
-        viewModel.isRefreshing = { loading in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = loading
+        viewModel.isRefreshing = { [weak self] loading in
+            guard let strongSelf = self else { return }
+            if loading {
+                strongSelf.activityIndicator.startAnimating()
+            } else {
+                strongSelf.activityIndicator.stopAnimating()
+            }
+            
         }
+        
         viewModel.didUpdateStack = { [weak self] repos in
             guard let strongSelf = self else { return }
             strongSelf.data = repos
             strongSelf.tableView.reloadData()
         }
+        
         viewModel.didSelecteStack = { [weak self] id in
 //            guard let strongSelf = self else { return }
 //            let alertController = UIAlertController(title: "Added to favorite \(id)", message: nil, preferredStyle: .alert)
